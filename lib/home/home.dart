@@ -609,15 +609,63 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: height * 0.03,
                   ),
+                  Image.asset(
+                    'assets/bg2.png',
+                    // fit: BoxFit.scaleDown,
+                    // width: width,
+                  ),
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text("Places near you",
+                          style: TextStyle(
+                            fontSize: 28,
+                          ),
+                        ),
+                        SizedBox(height: 15,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            PlaceCard(),
+                            PlaceCard(),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        PlaceCard(),
+                        PlaceCard(),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
                 ],
               ),
             ],
           ),
         );
       }),
-      floatingActionButton: FloatingActionButton(
-              onPressed: () {},
-              child: Icon(Icons.chat_bubble),
+      floatingActionButton: Opacity(
+        opacity: 1,
+        child: FloatingActionButton(
+                onPressed: () {},
+                child: Icon(Icons.chat_bubble),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
@@ -917,6 +965,62 @@ class CarouselContainer extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class PlaceCard extends StatelessWidget {
+  const PlaceCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: GlobalVariables.tertiaryColor,
+        borderRadius: BorderRadius.circular(10)
+      ),
+      child: Card(
+        color: GlobalVariables.tertiaryColor,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset('assets/delhi.png'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Delhi",
+                      style: TextStyle(
+                        color: GlobalVariables.backgroundColor2,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 24
+                      ),
+                    ),
+                    Text("Rating: 4/5",
+                      style: TextStyle(
+                          color: GlobalVariables.backgroundColor2,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(width: 40,),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.favorite_outline, color: GlobalVariables.backgroundColor2, size: 30,)
+                )
+              ],
+            ),
+
+          ],
+        ),
+
       ),
     );
   }
