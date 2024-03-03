@@ -20,7 +20,7 @@ class SignUpApp extends StatelessWidget {
         textTheme: GoogleFonts.playfairDisplayTextTheme(Theme.of(context).primaryTextTheme),
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
         colorScheme: const ColorScheme.dark(
-          primary: GlobalVariables.secondaryColor
+            primary: GlobalVariables.secondaryColor
         ),
         appBarTheme: AppBarTheme(
           elevation: 10,

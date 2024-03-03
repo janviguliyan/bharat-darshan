@@ -19,6 +19,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: IconButton(onPressed: () {}, icon: Icon(Icons.plumbing), color: Colors.white,),
       // backgroundColor: GlobalVariables.backgroundColor,
       // Colors.black54,
       // appBar: AppBar(
